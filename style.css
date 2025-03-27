@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #ff7978;
+    background-image: url('intro-component-with-signup-form-master/images/bg-intro-desktop.png');
+    color: #FFFFFF;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    gap: 20px;
+}
+
+.titulo_paragrafo {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+.paragrafo_roxo{
+    margin: 10px;
+    border: 2px;
+    padding: 5px;
+    background-color: #5D54A3;
+    border-radius: 8px;
+}
+
+.direito_itens {
+    background-color: #FFFFFF ;
+    border-radius: 15px;
+    box-shadow: 5px 8px 0px #FB010147;
+    margin: 14px;
+    max-width: 600px;
+    width: 400px;
+    opacity: 1;
+    top: 160px;
+    left: 650px;
+    width: 505px;
+    height: 565px;
+}
+
+.header {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.form {
+    padding: 18px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-content label {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.form-content input {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    font-size: 14px;
+}
+
+.form-control i {
+    position: absolute;
+    top: 45px;
+    right: 18px;
+    visibility: hidden;
+}
+
+.form-content small{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button {
+    background-color: #77E2B4;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    opacity: 1;
+    box-shadow: 0px 5px 0px #6ACCA1;
+    color: #FFFFFF;
+    top: 600px;
+    left: 690px;
+    width: 425px;
+    height: 50px;
+}
+
+/* Error and success messages */
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
