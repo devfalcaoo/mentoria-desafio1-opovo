@@ -23,17 +23,17 @@ body {
 
 .main {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .titulo_paragrafo {
     display: flex;
-    flex-direction: column;
-    margin: 10% 15%;
+    margin: 10% 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-flow: column;
+    text-align: left;
 }
 
 .paragrafo_roxo{
@@ -41,21 +41,20 @@ body {
     border: 2px;
     padding: 5px;
     background-color: #5D54A3;
-    border-radius: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px #FB010147;
+    width: 505px;
+    height: 50px;
+    text-align: center;
 }
 
 .direito_itens {
     background-color: #FFFFFF ;
     border-radius: 15px;
-    box-shadow: 5px 8px 0px #FB010147;
+    box-shadow: 0px 8px 0px #FB010147;
     margin: 14px;
     max-width: 600px;
-    width: 400px;
     opacity: 1;
-    top: 160px;
-    left: 650px;
-    width: 505px;
-    height: 565px;
 }
 
 .header {
@@ -114,6 +113,18 @@ body {
     left: 690px;
     width: 425px;
     height: 50px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #9D9D9D;
+    font: normal normal normal 12px/18px "Poppins", sans-serif;
+}
+
+span {
+    color:#ff7978;
 }
 
 /* Error and success messages */
