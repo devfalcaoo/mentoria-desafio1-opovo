@@ -10,7 +10,7 @@
 }
 
 body {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     background-color: #ff7978;
     background-image: url('intro-component-with-signup-form-master/images/bg-intro-desktop.png');
     color: #FFFFFF;
@@ -22,107 +22,130 @@ body {
 }
 
 .main {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Flexbox para alinhar os itens */
+    gap: 10px; /* Espaçamento entre os itens */ 
+    align-items: center; /* Alinha os itens verticalmente */
 }
 
+/*Título e parágrafo*/
 .titulo_paragrafo {
-    display: flex;
-    margin: 10% 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: column;
-    text-align: left;
+    display: flex; /* Flexbox para alinhar os itens */
+    margin: 10% 10%; /* Margem do título e parágrafo */
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Espaçamento entre os itens */
+    flex-flow: column; /* Direção da coluna */
+    text-align: left; /* Alinhamento do texto */
 }
 
+/*Título de valor $*/
 .paragrafo_roxo{
-    margin: 10px;
-    border: 2px;
-    padding: 5px;
-    background-color: #5D54A3;
-    border-radius: 5px;
-    box-shadow: 0px 5px 0px #FB010147;
-    width: 505px;
-    height: 50px;
-    text-align: center;
+    margin: 10px; /* Margem do parágrafo */
+    padding: 5px; /* Preenchimento do parágrafo */
+    background-color: #5D54A3; /* Cor de fundo do parágrafo */
+    border-radius: 5px; /* Borda arredondada do parágrafo */
+    box-shadow: 0px 5px 0px #FB010147; /* Sombra do parágrafo */
+    width: 505px; /* Largura do parágrafo */
+    height: 50px; /* Altura do parágrafo */
+    text-align: center; /* Alinhamento do texto*/
+    margin-top: -70px; /* Move para cima */
+    margin-bottom: 80px; /* Espaço abaixo */
 }
 
+/*div do formulário*/
 .direito_itens {
-    background-color: #FFFFFF ;
-    border-radius: 15px;
-    box-shadow: 0px 8px 0px #FB010147;
-    margin: 14px;
-    max-width: 600px;
-    opacity: 1;
+    background-color: #FFFFFF ; /*Cor de fundo do formulário*/
+    border-radius: 15px; /*Borda arredondada do formulário*/
+    box-shadow: 0px 8px 0px #FB010147; /*Sombra do formulário*/
+    margin: 14px; /*Margem do formulário*/
+    max-width: 505px; /*Largura máxima do formulário*/
+    max-height: 565px; /*Altura máxima do formulário*/
+    opacity: 1; /*Opacidade do formulário*/
 }
 
 .header {
-    text-align: center;
+    text-align: center; 
     color: #FFFFFF;
 }
 
 .form {
-    padding: 18px;
+    padding: 18px; /*Preenchimento do formulário*/
 }
 
 .form-control {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
+    margin-bottom: 10px; /*Margem inferior do formulário*/
+    padding-bottom: 20px; /*Preenchimento inferior do formulário*/
+    position: relative; /*Posição relativa do formulário*/
 }
 
 .form-content label {
-    display: inline-block;
-    margin-bottom: 4px;
+    display: inline-block; /*Exibe o rótulo em linha*/
+    margin-bottom: 4px; /*Margem inferior do rótulo*/
 }
 
 .form-content input {
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    border: 2px solid #ffffff;
-    font-size: 14px;
+    display: block; /* Exibe o campo de entrada em bloco */
+    width: 100%; /* Largura total */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Preenchimento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+.form-content input:focus {
+    outline: none; /*Remove o contorno do campo de entrada*/
+    border-color: #77E2B4; /*Cor da borda do campo de entrada ao focar*/
+    box-shadow: 0px 5px 0px #6ACCA1; /*Sombra do campo de entrada ao focar*/
 }
 
 .form-control i {
-    position: absolute;
-    top: 45px;
-    right: 18px;
-    visibility: hidden;
+    position: absolute; /*Posição absoluta do ícone*/
+    top: 50%; /*Posição superior do ícone*/
+    right: 18px; /*Posição direita do ícone*/
+    transform: translateY(-50%); /*Translação do ícone*/
+    font-size: 20px; /*Tamanho da fonte do ícone*/
+    visibility: hidden; /*Visibilidade do ícone*/
 }
 
 .form-content small{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
+    position: absolute; /*Posição absoluta do texto de erro*/
+    bottom: -20px; /*Posição inferior do texto de erro*/
+    left: 0; /*Posição do texto de erro à esquerda*/
+    font-size: 12px; /*Tamanho da fonte do texto de erro*/
+    color: #e74c3c;
+    visibility: hidden; /*Visibilidade do texto de erro*/
 }
 
+/*Botão de enviar*/
 .form button {
-    background-color: #77E2B4;
-    border: 2px solid;
-    border-radius: 5px;
-    font-size: 14px;
-    width: 100%;
-    opacity: 1;
-    box-shadow: 0px 5px 0px #6ACCA1;
-    color: #FFFFFF;
-    top: 600px;
-    left: 690px;
-    width: 425px;
-    height: 50px;
+    background-color: #77E2B4; /* Cor do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #FFFFFF; /* Cor do texto */
+    height: 50px; /* Altura do botão */
+    width: 100%; /* Largura total */
+    cursor: pointer; /* Cursor de ponteiro */
+    box-shadow: 0px 5px 0px #6ACCA1; /* Sombra do botão */
+    transition: all 0.3s ease; /* Transição suave */
 }
 
+form button:hover {
+    background-color: #6ACCA1; /*Cor do botão ao passar o mouse*/
+    box-shadow: 0px 5px 0px #77E2B4; /*Sombra do botão ao passar o mouse*/
+}
+
+/*Frase de rodapé do formulário*/
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    color: #9D9D9D;
-    font: normal normal normal 12px/18px "Poppins", sans-serif;
+    display: flex; 
+    justify-content: center; /*Centraliza o conteúdo*/
+    align-items: flex-end; /*Alinha o conteúdo ao final*/
+    color: #9D9D9D; /*Cor do texto do rodapé*/
+    font: normal normal normal 12px/18px "Poppins", sans-serif; /*Fonte do rodapé*/
 }
 
+/*Destaque do texto de rodapé*/
 span {
     color:#ff7978;
 }
