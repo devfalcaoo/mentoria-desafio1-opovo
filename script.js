@@ -64,7 +64,7 @@ function checkInputPassword() {
 
     function isFormValid() {
         const formItems = document.querySelectorAll('.form-item');
-        return [...formItems].every((item) => item.classList.contains('form-content'));
+        return [...formItems].every(item => item.classList.contains('error'));
     }
     
     function errorInput(input, message) {
@@ -72,10 +72,12 @@ function checkInputPassword() {
         const textMessage = formItem.querySelector('small');
     
         textMessage.innerText = message;
-        formItem.className = 'form-item error';
+        formItem.classList.remove = ('form-content');
+        formItem.classList.add('error');
     }
     
     function setSuccess(input) {
         const formItem = input.parentElement;
-        formItem.className = 'form-item form-content';
+        formItem.classList.remove = ('error');
+        formItem.classList.add('form-content');
     }
