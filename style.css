@@ -31,7 +31,7 @@ body {
 }
 
 /*Título e parágrafo*/
-.titulo_paragrafo {
+.titulo_apresentacao {
     display: flex; /* Flexbox para alinhar os itens */
     justify-content: space-between; /* Espaçamento entre os itens */
     flex-flow: column; /* Direção da coluna */
@@ -39,27 +39,27 @@ body {
     padding: 125px; 
 }
 
-.titulo_paragrafo h1 {
+.titulo_apresentacao h1 {
     line-height: 50px; /* Altura da linha */
     font-size: 46px; /* Tamanho da fonte */
     align-self: center;
     margin-bottom: 15px;
 }
 
-.titulo_paragrafo p {
+.titulo_apresentacao p {
     line-height: 26px;
     font-size: 16px;
     text-align: left;
 }
 
 /*Título de valor $*/
-.paragrafo_roxo{
+.promotion__box{
     padding: 14px 53px;
     background-color: #5D54A3;
     border-radius: 5px;
     box-shadow: 0px 5px 0px #FB010147;
     width: 505px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +67,7 @@ body {
 
 /*div do formulário*/
 /* ================== CONTAINER FORMULÁRIO ==================== */
-.direito_itens {
+.espaco_formulario {
     background-color: #FFFFFF ; /*Cor de fundo do formulário*/
     border-radius: 15px; /*Borda arredondada do formulário*/
     box-shadow: 0px 8px 0px #FB010147; /*Sombra do formulário*/
@@ -85,7 +85,7 @@ body {
 .form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .form-control {
@@ -113,13 +113,14 @@ body {
     box-shadow: 0px 5px 0px #6ACCA1; /*Sombra do campo de entrada ao focar*/
 }
 
-.form-control i {
-    position: absolute; /*Posição absoluta do ícone*/
-    top: 50%; /*Posição superior do ícone*/
-    right: 10px; /*Posição direita do ícone*/
-    transform: translateY(-50%); /*Translação do ícone*/
-    font-size: 20px; /*Tamanho da fonte do ícone*/
-    visibility: hidden; /*Visibilidade do ícone*/
+.c-box__erro {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    flex-direction: row-reverse; 
+    align-content: center; 
+    flex-wrap: wrap; /* Alinha o conteúdo ao centro */
+    visibility: hidden;
 }
 
 .form-content small{
@@ -167,20 +168,8 @@ span {
 }
 
 /* Error and success messages */
-.form-control.success input {
-    border-color: #2ecc71;
-}
 
-.form-control.error input {
-    border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check-circle {
-    visibility: visible;
-    color: #2ecc71;
-}
-
-.form-control.error i.fa-exclamation-circle {
+.form-control.error c-box__erro.fa-exclamation-circle {
     visibility: visible;
     color: #e74c3c;
 }

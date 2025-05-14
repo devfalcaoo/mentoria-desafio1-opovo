@@ -47,7 +47,7 @@ function checkInputLastName() {
 
 function checkInputEmail() {
     const emailValue = email.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
 
     if (emailValue === '') {
         errorInput(email, "Email is required");
