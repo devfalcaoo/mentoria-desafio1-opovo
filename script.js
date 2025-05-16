@@ -4,85 +4,75 @@ const lastName = document.getElementById('Last-name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener ('submit', (event) => {
     event.preventDefault();
 
-    checkInputFirstName();
-    checkInputLastName();
-    checkInputEmail();
-    checkInputPassword();
+////////Verifica se o nome está vazio////////
 
-    if (isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid) {
-        alert("Form submitted successfully!");
-        form.reset(); //Limpa o fomulário após o envio
-        clearFormStates(); // Limpa os estados do formulário
+    if (firstName.value === "") {
+        errorInput(firstName, "First name is required");
+        return;
     }
+
+////////Verifica se o sobrenome está vazio////////
+
+    if (lastName.value === "") {
+        errorInput(lastName, "Last name is required");
+        return;
+    }
+
+////////Verifica se o e-mail está preenchido e se é válido////////
+
+    if (email.value === "" || !isEmailValid(email.value)) {
+        errorInput(email, "Email is required");
+        return;
+    }
+
+////////Verifica se a senha está preenchida////////
+
+    if (!validatePassword (password.value, 8)) {
+        errorInput(password, "Password must be at least 8 characters long");
+        return;
+    }
+
+////////Se todos os campos estiverem corretamente preenchidos, envie o formulário////////
+
+    alert("Form submitted successfully!");
+    form.submit(); 
 });
 
-///////////////////////VALIDAÇÃO DOS CAMPOS///////////////////////
+////////Função que valida o e-mail////////
+    function isEmailValid (email) {
 
-function checkInputFirstName() {
-    const firstNameValue = firstName.value.trim();
+        //regex para validar o e-mail//
+        const emailRegex = new RegExp (
+            //usuario12@host.com.br//
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
+        );
 
-    if (firstNameValue === '') {
-        errorInput(firstName, "First name is required");
+        if (emailRegex.test(email)) {
+            return true;
+        }
+
         return false;
-    } else {
-        setSuccess(firstName);
+    }
+
+//////////Função que valida a senha////////
+function validatePassword(password, minDigits) {
+    if (password.length >= minDigits) {
+        //Senha válida//
         return true;
     }
+        //Senha inválida//
+        return false;
 }
 
-function checkInputLastName() {
-    const lastNameValue = lastName.value.trim();
-
-    if (lastNameValue === '') {
-        errorInput(lastName, "Last name is required");
-        return false;
-    } else {
-        setSuccess(lastName);
-        return true;
-    }
-}
-
-function checkInputEmail() {
-    const emailValue = email.value.trim();
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
-
-    if (emailValue === '') {
-        errorInput(email, "Email is required");
-        return false;
-    } else if (!emailRegex.test(emailValue)) {
-        errorInput(email, "Email is not valid");
-        return false;
-    } else {
-        setSuccess(email);
-        return true;
-    }
-}
-
-function checkInputPassword() {
-    const passwordValue = password.value.trim();
-
-    if (passwordValue === '') {
-        errorInput(password, "Password is required");
-        return false;
-    } else if (passwordValue.length < 8) {
-        errorInput(password, "Password must be at least 8 characters long");
-        return false;
-    } else {
-        setSuccess(password);
-        return true;
-    }
-}
-
-////////////////////////FUNÇÕES DE VALIDAÇÃO////////////////////////
-
+////////FUNÇÕES DE VALIDAÇÃO - ICONE DE ERRO////////
     function isFormValid() {
         const formItems = document.querySelectorAll('.form-item');
         return [...formItems].every(item => item.classList.contains('error'));
     }
-    
+
     function errorInput(input, message) {
         const formItem = input.parentElement;
         const textMessage = formItem.querySelector('small');
@@ -93,7 +83,7 @@ function checkInputPassword() {
         formItem.classList.add('error');
         if (icon) icon.style.visibility = 'visible'; // Exibe o ícone de erro
     }
-    
+
     function setSuccess(input) {
         const formItem = input.parentElement;
         const textMessage = formItem.querySelector('small'); // Limpa a mensagem de erro
